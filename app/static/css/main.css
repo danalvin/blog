@@ -1,64 +1,80 @@
-/*
-Code snippet by maridlcrmn for Bootsnipp.com
-Follow me on Twitter @maridlcrmn
-*/
-
-.navbar-brand { position: relative; z-index: 2; }
-
-.navbar-nav.navbar-right .btn { position: relative; z-index: 2; padding: 4px 20px; margin: 10px auto; transition: transform 0.3s; }
-
-.navbar .navbar-collapse { position: relative; overflow: hidden !important; }
-.navbar .navbar-collapse .navbar-right > li:last-child { padding-left: 22px; }
-
-.navbar .nav-collapse { position: absolute; z-index: 1; top: 0; left: 0; right: 0; bottom: 0; margin: 0; padding-right: 120px; padding-left: 80px; width: 100%; }
-.navbar.navbar-default .nav-collapse { background-color: #f8f8f8; }
-.navbar.navbar-inverse .nav-collapse { background-color: #222; }
-.navbar .nav-collapse .navbar-form { border-width: 0; box-shadow: none; }
-.nav-collapse>li { float: right; }
-
-.btn.btn-circle { border-radius: 50px; }
-.btn.btn-outline { background-color: transparent; }
-
-.navbar-nav.navbar-right .btn:not(.collapsed) {
-    background-color: rgb(111, 84, 153);
-    border-color: rgb(111, 84, 153);
-    color: rgb(255, 255, 255);
-}
-
-.navbar.navbar-default .nav-collapse,
-.navbar.navbar-inverse .nav-collapse {
-    height: auto !important;
-    transition: transform 0.3s;
-    transform: translate(0px,-50px);
-}
-.navbar.navbar-default .nav-collapse.in,
-.navbar.navbar-inverse .nav-collapse.in {
-    transform: translate(0px,0px);
-}
-
-
-@media screen and (max-width: 767px) {
-    .navbar .navbar-collapse .navbar-right > li:last-child { padding-left: 15px; padding-right: 15px; } 
-    
-    .navbar .nav-collapse { margin: 7.5px auto; padding: 0; }
-    .navbar .nav-collapse .navbar-form { margin: 0; }
-    .nav-collapse>li { float: none; }
-    
-    .navbar.navbar-default .nav-collapse,
-    .navbar.navbar-inverse .nav-collapse {
-        transform: translate(-100%,0px);
-    }
-    .navbar.navbar-default .nav-collapse.in,
-    .navbar.navbar-inverse .nav-collapse.in {
-        transform: translate(0px,0px);
-    }
-    
-    .navbar.navbar-default .nav-collapse.slide-down,
-    .navbar.navbar-inverse .nav-collapse.slide-down {
-        transform: translate(0px,-100%);
-    }
-    .navbar.navbar-default .nav-collapse.in.slide-down,
-    .navbar.navbar-inverse .nav-collapse.in.slide-down {
-        transform: translate(0px,0px);
-    }
-}
+body {
+    background: #fafafa;
+    color: #333333;
+    margin-top: 5rem;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    color: #444444;
+  }
+  
+  .bg-steel {
+    background-color: #5f788a;
+  }
+  
+  .site-header .navbar-nav .nav-link {
+    color: #cbd5db;
+  }
+  
+  .site-header .navbar-nav .nav-link:hover {
+    color: #ffffff;
+  }
+  
+  .site-header .navbar-nav .nav-link.active {
+    font-weight: 500;
+  }
+  
+  .content-section {
+    background: #ffffff;
+    padding: 10px 20px;
+    border: 1px solid #dddddd;
+    border-radius: 3px;
+    margin-bottom: 20px;
+  }
+  
+  .article-title {
+    color: #444444;
+  }
+  
+  a.article-title:hover {
+    color: #428bca;
+    text-decoration: none;
+  }
+  
+  .article-content {
+    white-space: pre-line;
+  }
+  
+  .article-img {
+    height: 65px;
+    width: 65px;
+    margin-right: 16px;
+  }
+  
+  .article-metadata {
+    padding-bottom: 1px;
+    margin-bottom: 4px;
+    border-bottom: 1px solid #e3e3e3
+  }
+  
+  .article-metadata a:hover {
+    color: #333;
+    text-decoration: none;
+  }
+  
+  .article-svg {
+    width: 25px;
+    height: 25px;
+    vertical-align: middle;
+  }
+  
+  .account-img {
+    height: 125px;
+    width: 125px;
+    margin-right: 20px;
+    margin-bottom: 16px;
+  }
+  
+  .account-heading {
+    font-size: 2.5rem;
+  }
