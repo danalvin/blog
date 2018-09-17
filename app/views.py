@@ -2,7 +2,7 @@
 from flask import render_template, url_for, flash, redirect, request, abort
 from app import app, db
 from .forms import CommentForm , RegistrationForm, LoginForm, UpdateAccountForm, PostForm
-from .models import User, Post
+from .models import *
 from flask_login import login_user, current_user, logout_user, login_required
 
 
@@ -128,23 +128,18 @@ def delete_post(post_id):
     flash('Your post has been deleted!', 'success')
     return redirect(url_for('home'))
 
-@app.route("/post/<int:post_id>/commment", methods=['GET', 'POST'])
+@app.route("/post/<int:post_id>/comment", methods=['GET', 'POST'])
 @login_required
-def comment_post(post_id):
-    post = Post.query.get_or_404(post_id)
-    if post.author != current_user:
-        abort(403)
+def new_comment(post_id):
     form = CommentForm()
     if form.validate_on_submit():
-        comment.content = form.content.data
+        comment = Comment(content=form.content.data,user_id=current_user.id,posts_id=post_id)
+        db.session.add(comment)
         db.session.commit()
-        flash('Your post has been updated!', 'success')
-        return redirect(url_for('post', post_id=post.id))
-    elif request.method == 'GET':
-        form.content.data = post.content
-    return render_template('create_post.html', title='Update Post',
-                           form=form, legend='Update Post')
-
+        flash('Your comment has been created!', 'success')
+        return redirect(url_for('post'))
+    return render_template('Comment.html', title='comment',
+                           form=form, legend='New Comment')
 
 
 
